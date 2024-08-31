@@ -1,0 +1,369 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Monda", sans-serif;
+}
+
+body {
+    color: rgb(255, 255, 255);
+    background: radial-gradient(ellipse 80% 80% at 50% -20%, rgba(120, 119, 198, 0.3), rgba(255, 255, 255, 0));
+    background-color: #1a202c;
+}
+
+.sectionsDiv {
+    margin: 0px 20px;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 30px;
+    border-radius: 3px;
+    background-color: rgba(26, 26, 26, 0.726);
+    z-index: 1000;
+    height: 50px;
+}
+
+#burgermenu {
+    font-size: 1.8em;
+}
+
+header nav ul {
+    display: none;
+}
+
+header button {
+    background: linear-gradient(to right, #0083B0, #00B4DB);
+    padding: 8px 15px;
+    border: 0px;
+    border-radius: 5px;
+}
+
+/* HOME BANNER */
+
+.homeBannerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.homeBanner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.homeBanner h2 {
+    background: linear-gradient(to right, #0083B0, #00B4DB);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#homeBannerIcon {
+    font-size: 2em;
+    cursor: pointer;
+    transition: color 300ms ease;
+
+}
+
+.bannerLinksContainer {
+    border: 1px solid #00B4DB;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.bannerLinksContainer:hover {
+    background: linear-gradient(to right, #0083B0, #00B4DB);
+    border: 1px solid white;
+}
+
+.bannerLinksContainer.email {
+    display: flex;
+    align-items: center;
+}
+
+.bannerLinksContainer.email h4 {
+    margin-left: 8px;
+    font-weight: 100;
+}
+
+.homeBannerProfile {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba(252, 252, 252, 0.2);
+    }
+
+    100% {
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+    }
+}
+
+.homeBannerDescription {
+    max-width: 400px;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 100;
+}
+
+.bannerLinks {
+    right: 0px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    bottom: 0px;
+    gap: 10px;
+    padding: 10px;
+}
+
+.bannerLinks a {
+    color: white;
+}
+
+.homeBanner h1 {
+    font-weight: 100;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+/* TECH HOME */
+
+.technologies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    animation-timeline: view(block 70% 10%);
+    animation-name: grow;
+    animation-fill-mode: both;
+    animation-duration: 1ms;
+    /* Firefox requires this to apply the animation */
+    animation-timing-function: linear;
+}
+
+.techContainer {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    padding: 30px 5px;
+    margin: 10px 0px;
+    border-radius: 20px;
+    background-color: rgba(231, 242, 252, 0.815);
+}
+
+.techContainer h3 {
+    display: none;
+}
+
+.titleSection {
+    animation-timeline: view(block 70% 10%);
+    animation-name: grow;
+    animation-fill-mode: both;
+    animation-duration: 1ms;
+    /* Firefox requires this to apply the animation */
+    animation-timing-function: linear;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 80px;
+}
+
+
+@keyframes grow {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.techLogo {
+    width: 80%;
+}
+
+/* PROJECTS */
+
+.projectsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.projects {
+    animation-timeline: view(block 70% 10%);
+    animation-name: grow;
+    animation-fill-mode: both;
+    animation-duration: 1ms;
+    animation-timing-function: linear;
+    width: 100%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: aliceblue;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+    margin-bottom: 30px;
+    flex-direction: column;
+}
+
+.projects h2 {
+    margin-top: 10px;
+    font-size: 1.8em;
+}
+
+.projects h3 {
+    font-size: 1.3em;
+    font-weight: 300;
+}
+
+.projectsTechIcon {
+    width: 20px;
+    margin-right: 9px;
+}
+
+.projectsTechContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.projectsTech {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 255, 255, 0.116);
+    padding: 5px 7px;
+    color: rgb(82, 80, 80);
+    border: 1px solid #807f7f88;
+    border-radius: 5px;
+}
+
+.projectsImg {
+    width: 100%;
+    max-height: 258px;
+}
+
+.deployProjectBtn {
+    margin-top: 20px;
+    border: 0px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    width: 49%;
+    background-color: #575858;
+    color: rgb(248, 248, 248);
+    height: 45px;
+}
+
+@media (min-width: 768px) {
+    .bannerLinks {
+        right: 0px;
+        top: 45%;
+        border-radius: 10px 0px 0px 10px;
+        height: fit-content;
+        padding: 12px 8px;
+    }
+
+    .techLogo {
+        width: 15%;
+        margin-left: 15px;
+    }
+
+    .techContainer {
+        display: flex;
+        width: 30%;
+        justify-content: space-between;
+        padding: 10px 5px;
+        margin: 10px 0px;
+        border-radius: 5px;
+        align-items: center;
+    }
+
+    .techContainer h3 {
+        display: block;
+        color: black;
+        font-size: 1.8em;
+        margin-right: 15px;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+        width: 44.5%;
+        margin-bottom: 30px;
+    }
+
+
+    /* HEADER */
+
+    #burgermenu {
+        display: none;
+    }
+
+    header nav ul {
+        display: flex;
+        list-style: none;
+    }
+
+    header nav ul li {
+        margin: 0px 10px;
+        font-size: 1.1em;
+    }
+
+}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px){
+    header{
+        padding: 10px 5%;
+    }
+
+    .projects{
+        width: 100%;
+        flex-direction: row;
+        padding: 1%;
+    }
+
+    .projectsImg {
+        width: fit-content;
+        object-fit: cover;
+        height: fit-content;
+    }
+
+    .projects h2{
+        margin-top: 0px;
+    }
+
+    .projectsContainer,.technologies{
+        margin: 0% 5%;
+    }
+
+    .projectsInfo{
+        margin-left: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
