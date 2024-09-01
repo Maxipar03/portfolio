@@ -144,37 +144,47 @@ header button {
 /* TECH HOME */
 
 .technologies {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    animation-timeline: view(block 70% 10%);
-    animation-name: grow;
-    animation-fill-mode: both;
-    animation-duration: 1ms;
-    /* Firefox requires this to apply the animation */
-    animation-timing-function: linear;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(90deg, transparent,#fff 20%,#fff 80%, transparent);
 }
 
-.techContainer {
-    width: 40%;
+.slider {
     display: flex;
-    justify-content: center;
-    padding: 30px 5px;
-    margin: 10px 0px;
-    border-radius: 20px;
-    background-color: rgba(231, 242, 252, 0.815);
+    animation: scroll 15s linear infinite;
+    width: calc((150px + 40px) * 18); 
 }
 
-.techContainer h3 {
-    display: none;
+.techLogo {
+    width: 150px; 
+    margin: 0 20px; 
 }
+
+.slider:hover{
+    animation-play-state: paused;
+}
+
+.techLogo:hover{
+    filter: drop-shadow(0 0 0.75rem crimson);
+    cursor: pointer;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0); 
+    }
+    100% {
+        transform: translateX(calc((-150px - 40px) * 9)); 
+    }
+}
+
 
 .titleSection {
     animation-timeline: view(block 70% 10%);
     animation-name: grow;
     animation-fill-mode: both;
     animation-duration: 1ms;
-    /* Firefox requires this to apply the animation */
+
     animation-timing-function: linear;
     font-size: 2em;
     text-align: center;
@@ -191,10 +201,6 @@ header button {
     to {
         opacity: 1;
     }
-}
-
-.techLogo {
-    width: 80%;
 }
 
 /* PROJECTS */
@@ -223,6 +229,13 @@ header button {
     color: black;
     margin-bottom: 30px;
     flex-direction: column;
+}
+
+.projectsInfo{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
 }
 
 .projects h2 {
@@ -276,6 +289,10 @@ header button {
     height: 45px;
 }
 
+.deployProjectBtn.deploy{
+    background-color: black;
+}
+
 @media (min-width: 768px) {
     .bannerLinks {
         right: 0px;
@@ -283,28 +300,6 @@ header button {
         border-radius: 10px 0px 0px 10px;
         height: fit-content;
         padding: 12px 8px;
-    }
-
-    .techLogo {
-        width: 15%;
-        margin-left: 15px;
-    }
-
-    .techContainer {
-        display: flex;
-        width: 30%;
-        justify-content: space-between;
-        padding: 10px 5px;
-        margin: 10px 0px;
-        border-radius: 5px;
-        align-items: center;
-    }
-
-    .techContainer h3 {
-        display: block;
-        color: black;
-        font-size: 1.8em;
-        margin-right: 15px;
     }
 
     /* PROJECTS */
@@ -347,9 +342,8 @@ header button {
     }
 
     .projectsImg {
-        width: fit-content;
-        object-fit: cover;
-        height: fit-content;
+        max-height: none;
+        width: 30%;
     }
 
     .projects h2{
@@ -363,6 +357,7 @@ header button {
     .projectsInfo{
         margin-left: 25px;
         display: flex;
+        width: 100%;
         flex-direction: column;
         justify-content: space-around;
     }
